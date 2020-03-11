@@ -1,0 +1,55 @@
+<section class="view user profile">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    <%= user.first_name %> <%= user.insertion ? user.insertion + ' ' : '' %> <%= user.last_name %>
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/user/profile">
+                    <li class="menu-navigation-item">
+                        Profile
+                    </li>
+                </a>
+
+                <a href="/user/settings">
+                    <li class="menu-navigation-item">
+                        Settings
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <% if(typeof user != 'undefined' && user.rank >= 2) { %>
+                    <a href="/management/overview">
+                        <li class="menu-tools-item">
+                            Management
+                        </li>
+                    </a>
+                <% } %>
+
+                <a href="/user/logout">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</section>

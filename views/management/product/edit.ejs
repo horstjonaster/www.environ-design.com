@@ -1,0 +1,204 @@
+<script src="/assets/js/management.js"></script>
+
+<section class="view management product edit">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    Projects
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/management/overview">
+                    <li class="menu-navigation-item">
+                        Overview
+                    </li>
+                </a>
+
+                <a href="/management/user/overview">
+                    <li class="menu-navigation-item">
+                        Users
+                    </li>
+                </a>
+
+                <a href="/management/order/overview">
+                    <li class="menu-navigation-item">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="/management/project/overview">
+                    <li class="menu-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/certificate/overview">
+                    <li class="menu-navigation-item">
+                        Certificates
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <a href="/user/profile">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="/management/project/overview">
+                    <li class="breadcrumb-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/category/overview/<%= product.project._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.project.name %>
+                    </li>
+                </a>
+
+                <a href="/management/product/overview/<%= product.category._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.category.name %>
+                    </li>
+                </a>
+
+                <a href="/management/product/view/<%= product._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.name %>
+                    </li>
+                </a>
+
+                <a href="/">
+                    <li class="breadcrumb-navigation-item">
+                        Edit
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block form">
+        <div class="form-head">
+            <div class="container">
+                <div class="form-head-column left col-md-4">
+                    <p class="form-head-column-title">
+                        Nr. 01
+                    </p>
+                </div>
+
+                <div class="form-head-column center col-md-4">
+                    <p class="form-head-column-title">
+                        Any questions or interested in wholesale?
+                    </p>
+                </div>
+
+                <div class="form-head-column right col-md-4">
+                    <p class="form-head-column-title">
+                        "The future is yours"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-body">
+            <div class="container">
+                <div class="form-body-column left col-md-4">
+                    <h1 class="form-body-title">
+                        Any questions or interested in wholesale?
+                    </h1>
+                </div>
+
+                <div class="form-body-column col-md-8">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="form-body-row row">
+                            <input class="form-body-group-input" type="text" name="name" placeholder="Name" autocomplete="off" value="<%= product.name %>">
+                        </div>
+
+                        <div class="form-body-row row">
+                            <div class="form-body-column left col-md-8">
+                                <input class="form-body-group-input" type="number" name="price" placeholder="Price" autocomplete="off" value="<%= product.price %>">
+                            </div>
+
+                            <div class="form-body-column right col-md-4">
+                                <input class="form-body-input" type="number" name="rating" placeholder="Rating" autocomplete="off" value="<%= product.rating %>">
+                            </div>
+                        </div>
+
+                        <div class="form-body-row row">
+                            <textarea class="form-body-textarea" name="description" placeholder="Description" rows="5"><%= product.description %></textarea>
+                        </div>
+
+                        <div class="form-body-quantities">
+                            <% product.sizes.forEach((size) => {  %>
+                                <div class="from-body-quantity form-body-row row">
+                                    <div class="form-body-column left col-md-6">
+                                        <input class="form-body-group-input" type="text" name="sizes" placeholder="Size" autocomplete="off" value="<%= size.size %>">
+                                    </div>
+
+                                    <div class="form-body-column right col-md-6">
+                                        <input class="form-body-group-input" type="number" name="quantities" placeholder="Quantity" autocomplete="off" value="<%= size.quantity %>">
+                                    </div>
+                                </div>
+                            <% }); %>
+                        </div>
+
+                        <div class="form-body-row">
+                            <button class="form-body-quantities-button form-body-button" type="button">
+                                ADD
+                            </button>
+                        </div>
+
+                        <div class="form-body-row">
+                            <ul class="form-body-certificates">
+                                <% certificates.forEach((certificate) => {%>
+                                    <li class="form-body-certificates-item">
+                                        <input class="form-body-checkbox form-body-certificates-item-checkbox" type="checkbox" name="certificates" id="<%= certificate._id %>" value="<%= certificate._id %>" <%= product.certificates.indexOf(certificate._id) > -1 ? 'checked' : ''%>>
+                                        <label class="form-body-certificates-item-label form-body-label" for="<%= certificate._id %>"><%= certificate.name %></label>
+                                    </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+
+                        <div class="from-body-quantity form-body-row row">
+                            <input class="form-body-input" id="images" type="file" name="images" multiple>
+                        </div>
+
+                        <button class="form-body-button">
+                            Edit
+                        </button>
+
+                        <a href="/management/product/view/<%= product._id %>">
+                            <button class="form-body-button" type="button">
+                                Back
+                            </button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

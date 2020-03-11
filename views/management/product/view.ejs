@@ -1,0 +1,107 @@
+<section class="view management product overview">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    Products
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/management/overview">
+                    <li class="menu-navigation-item">
+                        Overview
+                    </li>
+                </a>
+
+                <a href="/management/user/overview">
+                    <li class="menu-navigation-item">
+                        Users
+                    </li>
+                </a>
+
+                <a href="/management/order/overview">
+                    <li class="menu-navigation-item">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="/management/project/overview">
+                    <li class="menu-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/certificate/overview">
+                    <li class="menu-navigation-item">
+                        Certificates
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <a href="/management/product/edit/<%= product._id %>">
+                    <li class="menu-tools-item">
+                        Edit
+                    </li>
+                </a>
+
+                <a href="/management/product/delete/<%= product._id %>">
+                    <li class="menu-tools-item">
+                        Delete
+                    </li>
+                </a>
+
+                <a href="/user/profile">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="/management/project/overview">
+                    <li class="breadcrumb-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/category/overview/<%= product.project._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.project.name %>
+                    </li>
+                </a>
+
+                <a href="/management/product/overview/<%= product.category._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.category.name %>
+                    </li>
+                </a>
+
+                <a href=">">
+                    <li class="breadcrumb-navigation-item">
+                        <%= product.name %>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+</section>

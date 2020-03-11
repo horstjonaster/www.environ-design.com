@@ -1,0 +1,176 @@
+.loader
+{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.75);
+
+  .loader-image
+  {
+    position: absolute;
+    top: calc(50vh - 30px);
+    left: calc(50% - 30px);
+    height: 60px;
+    width: 60px;
+  }
+
+  &.active
+  {
+    display: block;
+  }
+}
+
+.header
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 120px;
+  line-height: 120px;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  transition: all ease-in-out 250ms;
+
+  .header-logo
+  {
+    float: left;
+    color: @white;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .header-navigation
+  {
+    display: inline-block;
+    list-style: none;
+
+    .header-navigation-item
+    {
+      display: inline-block;
+      margin: 0px 15px;
+      color: @white;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+
+  .header-tools
+  {
+    float: right;
+    list-style: none;
+
+    .header-tools-item
+    {
+      display: inline-block;
+      margin-left: 30px;
+      color: @white;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+
+  &.active
+  {
+    background: @white;
+    border-bottom-color: @gray;
+
+    .header-logo, .header-navigation-item, .header-tools-item
+    {
+      color: @black;
+    }
+  }
+}
+
+.content
+{
+  min-height: 100vh;
+}
+
+.footer
+{
+  padding: 50px 0px;
+  background: @black;
+
+  .footer-body
+  {
+    padding: 50px 0px;
+
+    .footer-body-logo
+    {
+      font-size: 20px;
+      letter-spacing: 5px;
+      color: @white;
+    }
+
+    .footer-body-title
+    {
+      color: @white;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .footer-body-navigation
+    {
+      margin-top: 10px;
+      list-style: none;
+
+      .footer-body-navigation-item
+      {
+        margin-top: 5px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: @white;
+      }
+    }
+  }
+
+  .footer-foot
+  {
+    padding: 50px 0px;
+
+    .footer-foot-column
+    {
+      &.right
+      {
+        .footer-foot-socials
+        {
+          float: right;
+        }
+      }
+    }
+
+    .footer-foot-copyright
+    {
+      color: @white;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer-foot-socials
+    {
+      list-style: none;
+
+      .footer-foot-socials-item
+      {
+        display: inline-block;
+        margin-right: 20px;
+
+        .footer-foot-socials-item-image
+        {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

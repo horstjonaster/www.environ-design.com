@@ -1,0 +1,177 @@
+<section class="view management category edit">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    Categories
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/management/overview">
+                    <li class="menu-navigation-item">
+                        Overview
+                    </li>
+                </a>
+
+                <a href="/management/user/overview">
+                    <li class="menu-navigation-item">
+                        Users
+                    </li>
+                </a>
+
+                <a href="/management/order/overview">
+                    <li class="menu-navigation-item">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="/management/project/overview">
+                    <li class="menu-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/certificate/overview">
+                    <li class="menu-navigation-item">
+                        Certificates
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <a href="/user/profile">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="/management/project/overview">
+                    <li class="breadcrumb-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/category/overview/<%= category.project._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= category.project.name %>
+                    </li>
+                </a>
+
+                <a href="/management/product/overview/<%= category._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= category.name %>
+                    </li>
+                </a>
+
+                <a href="">
+                    <li class="breadcrumb-navigation-item">
+                        Edit
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="/management/project/overview">
+                    <li class="breadcrumb-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/category/overview/<%= category.project._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= category.project.name %>
+                    </li>
+                </a>
+
+                <a href="/management/product/overview/<%= category._id %>">
+                    <li class="breadcrumb-navigation-item">
+                        <%= category.name %>
+                    </li>
+                </a>
+
+                <a href="">
+                    <li class="breadcrumb-navigation-item">
+                        Edit
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block form">
+        <div class="form-head">
+            <div class="container">
+                <div class="form-head-column left col-md-4">
+                    <p class="form-head-column-title">
+                        Nr. 01
+                    </p>
+                </div>
+
+                <div class="form-head-column center col-md-4">
+                    <p class="form-head-column-title">
+                        Are you ready to make a difference?
+                    </p>
+                </div>
+
+                <div class="form-head-column right col-md-4">
+                    <p class="form-head-column-title">
+                        "The future is yours"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-body">
+            <div class="container">
+                <div class="form-body-column left col-md-4">
+                    <h1 class="form-body-title">
+                        Are you ready to make a difference?
+                    </h1>
+                </div>
+
+                <div class="form-body-column col-md-8">
+                    <form method="post">
+                        <div class="form-body-row row">
+                            <input class="form-body-input" type="text" name="name" placeholder="Name" autocomplete="off" value="<%= category.name %>">
+                        </div>
+
+                        <button class="form-body-button">
+                            Edit
+                        </button>
+
+                        <a href="/management/product/overview/<%= category._id %>">
+                            <button class="form-body-button" type="button">
+                                Back
+                            </button>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

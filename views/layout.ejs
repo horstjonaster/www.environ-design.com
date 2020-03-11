@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            ENVIRON-DESIGN - WEARING YOUR OWN FUTURE.
+        </title>
+
+        <meta name="" content="">
+        <meta name="" content="">
+        <meta name="" content="">
+        <meta name="" content="">
+
+        <link href="/assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <link href="/assets/css/main.css" type="text/css" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+    </head>
+
+    <body>
+        <div class="loader active">
+            <img class="loader-image" src="/assets/gif/loader.gif" alt="loader">
+        </div>
+
+        <div class="header">
+            <div class="container">
+                <a href="/">
+                    <h1 class="header-logo">
+                        Environ-Design
+                    </h1>
+                </a>
+
+                <ul class="header-navigation">
+                    <a href="">
+                        <li class="header-navigation-item">
+                            Store
+                        </li>
+                    </a>
+
+                    <a href="/back-to-nature">
+                        <li class="header-navigation-item">
+                            Back To Nature
+                        </li>
+                    </a>
+
+                    <a href="/clean-the-world">
+                        <li class="header-navigation-item">
+                            Clean The World
+                        </li>
+                    </a>
+
+                    <a href="/social-compliance">
+                        <li class="header-navigation-item">
+                            Social Compliance
+                        </li>
+                    </a>
+
+                    <a href="/contact">
+                        <li class="header-navigation-item">
+                            Contact
+                        </li>
+                    </a>
+                </ul>
+
+                <ul class="header-tools">
+                    <a href="">
+                        <li class="header-tools-item">
+                            Shoppingcart
+                        </li>
+                    </a>
+
+                    <% if(typeof user != 'undefined') { %>
+                        <a href="/user/profile">
+                            <li class="header-tools-item">
+                                <%= user.first_name %> <%= user.insertion ? user.insertion + ' ' : '' %> <%= user.last_name %>
+                            </li>
+                        </a>
+                    <% } else { %>
+                        <a href="/user/login">
+                            <li class="header-tools-item">
+                                Login
+                            </li>
+                        </a>
+
+                        <a href="/user/register">
+                            <li class="header-tools-item">
+                                Register
+                            </li>
+                        </a>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <%- body %>
+        </div>
+
+        <div class="footer">
+            <div class="footer-body">
+                <div class="container">
+                    <div class="col-md-3 footer-body-column left">
+                        <h1 class="footer-body-logo">
+                            Environ-Design
+                        </h1>
+                    </div>
+
+                    <div class="col-md-3 footer-body-column left">
+                        <h5 class="footer-body-title">
+                            Policies
+                        </h5>
+
+                        <ul class="footer-body-navigation">
+                            <a href="/policy/cookie">
+                                <li class="footer-body-navigation-item">
+                                    Cookies
+                                </li>
+                            </a>
+
+                            <a href="/policy/disclaimer">
+                                <li class="footer-body-navigation-item">
+                                    Disclaimer
+                                </li>
+                            </a>
+
+                            <a href="/policy/privacy">
+                                <li class="footer-body-navigation-item">
+                                    Privacy
+                                </li>
+                            </a>
+
+                            <a href="/policy/shipping-and-return">
+                                <li class="footer-body-navigation-item">
+                                    Shipping And Return
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 footer-body-column right">
+                        <h5 class="footer-body-title">
+                            Pages
+                        </h5>
+
+                        <ul class="footer-body-navigation">
+                            <a href="">
+                                <li class="footer-body-navigation-item">
+                                    Store
+                                </li>
+                            </a>
+
+                            <a href="/back-to-nature">
+                                <li class="footer-body-navigation-item">
+                                    Back To Nature
+                                </li>
+                            </a>
+
+                            <a href="/clean-the-world">
+                                <li class="footer-body-navigation-item">
+                                    Clean The World
+                                </li>
+                            </a>
+
+                            <a href="/social-compliance">
+                                <li class="footer-body-navigation-item">
+                                    Social Compliance
+                                </li>
+                            </a>
+
+                            <a href="/contact">
+                                <li class="footer-body-navigation-item">
+                                    Contact
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 footer-body-column right">
+                        <h5 class="footer-body-title">
+                            User
+                        </h5>
+
+                        <ul class="footer-body-navigation">
+                            <% if(typeof user != 'undefined') { %>
+                                <a href="/user/profile">
+                                    <li class="footer-body-navigation-item">
+                                        Profile
+                                    </li>
+                                </a>
+
+                                <a href="/user/orders">
+                                    <li class="footer-body-navigation-item">
+                                        Orders
+                                    </li>
+                                </a>
+
+                                <a href="/user/settings">
+                                    <li class="footer-body-navigation-item">
+                                        Settings
+                                    </li>
+                                </a>
+
+                                <% if(user.rank >= 2) { %>
+                                    <a href="/management/overview">
+                                        <li class="footer-body-navigation-item">
+                                            Management
+                                        </li>
+                                    </a>
+                                <% } %>
+                            <% } else { %>
+                                <a href="/user/login">
+                                    <li class="footer-body-navigation-item">
+                                        Login
+                                    </li>
+                                </a>
+
+                                <a href="/user/register">
+                                    <li class="footer-body-navigation-item">
+                                        Register
+                                    </li>
+                                </a>
+                            <% } %>
+
+                            <a href="/">
+                                <li class="footer-body-navigation-item">
+                                    Shoppingbag
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-foot">
+                <div class="container">
+                    <div class="col-md-6 footer-foot-column left">
+                        <p class="footer-foot-copyright">
+                            &copy; Environ-Design 2020. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 footer-foot-column right">
+                        <ul class="footer-foot-socials">
+                            <a href="">
+                                <li class="footer-foot-socials-item">
+                                    <img class="footer-foot-socials-item-image" src="/assets/icon/white/facebook.png" alt="Facebook">
+                                </li>
+                            </a>
+
+                            <a href="">
+                                <li class="footer-foot-socials-item">
+                                    <img class="footer-foot-socials-item-image" src="/assets/icon/white/twitter.png" alt="Twitter">
+                                </li>
+                            </a>
+
+                            <a href="">
+                                <li class="footer-foot-socials-item">
+                                    <img class="footer-foot-socials-item-image" src="/assets/icon/white/instagram.png" alt="Instagram">
+                                </li>
+                            </a>
+
+                            <a href="">
+                                <li class="footer-foot-socials-item">
+                                    <img class="footer-foot-socials-item-image" src="/assets/icon/white/linkedin.png" alt="LinkedIn">
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

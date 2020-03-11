@@ -1,0 +1,175 @@
+<section class="view management user overview">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    Users
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/management/overview">
+                    <li class="menu-navigation-item">
+                        Overview
+                    </li>
+                </a>
+
+                <a href="/management/user/overview">
+                    <li class="menu-navigation-item">
+                        Users
+                    </li>
+                </a>
+
+                <a href="/management/order/overview">
+                    <li class="menu-navigation-item">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="/management/project/overview">
+                    <li class="menu-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/certificate/overview">
+                    <li class="menu-navigation-item">
+                        Certificates
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <a href="/management/user/create/">
+                    <li class="menu-tools-item">
+                        Create
+                    </li>
+                </a>
+
+                <a href="/user/profile">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="">
+                    <li class="breadcrumb-navigation-item">
+                        Users
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block data">
+        <div class="container">
+            <table class="data-table">
+                <thead class="data-table-head">
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        #
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Full name
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Email
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Phone number
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Rank
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Last updated on
+                    </p>
+                </th>
+
+                <th class="data-table-head-column">
+                    <p class="data-table-head-column-title">
+                        Created on
+                    </p>
+                </th>
+                </thead>
+
+                <tbody class="data-table-body">
+                    <%
+                        let nr = 1;
+                        users.forEach((user) => {
+                    %>
+                        <tr class="data-table-body-row">
+                            <td class="data-table-body-column">
+                                Nr. 0<%= nr %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= user.first_name %> <%= user.insertion ? user.insertion + ' ' : '' %> <%= user.last_name %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= user.email %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= user.phone_number %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <p class="data-table-body-column-rank <%= user.rank == 0 ? 'blocked' : user.rank == 1 ? 'customer' : user.rank == 2 ? 'employee' : user.rank == 3 ? 'administrator' : 'unknown' %>">
+                                    <%= user.rank == 0 ? 'blocked' : user.rank == 1 ? 'customer' : user.rank == 2 ? 'employee' : user.rank == 3 ? 'administrator' : 'unknown' %>
+                                </p>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= user.updated.toDateString() %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= user.created.toDateString() %>
+                            </td>
+                        </tr>
+                    <%
+                            nr++;
+                        });
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

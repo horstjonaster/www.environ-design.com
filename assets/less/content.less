@@ -1,0 +1,467 @@
+.block
+{
+  &.topper
+  {
+    height: 100vh;
+
+    .topper-background
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .topper-overlay
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .topper-body
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: calc(100vh - 250px);
+      z-index: 1;
+
+      .topper-body-left
+      {
+        .topper-body-left-title
+        {
+          margin-top: 250px;
+          line-height: 85px;
+          color: @white;
+          font-size: 80px;
+        }
+      }
+
+      .topper-body-right
+      {
+        .topper-body-right-title
+        {
+          float: right;
+          margin-top: 250px;
+          color: @white;
+          writing-mode: vertical-lr;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .topper-foot
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 50px;
+      float: right;
+      background: @silver;
+      z-index: 1;
+
+      .topper-foot-description
+      {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  &.banner
+  {
+    height: 60vh;
+
+    .banner-background
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60vh;
+      width: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .banner-overlay
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .banner-body
+    {
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      .banner-body-title
+      {
+        margin-top: 250px;
+        line-height: 85px;
+        color: @white;
+        font-size: 80px;
+      }
+
+      .banner-body-description
+      {
+        margin-top: 10px;
+        color: @white;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  &.article
+  {
+    padding: 50px 0px;
+
+    .article-head
+    {
+      padding: 50px 0px;
+
+      .article-head-column
+      {
+        &.right
+        {
+          text-align: right;
+        }
+
+        .article-head-column-title
+        {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .article-body
+    {
+      padding: 50px 0px;
+
+      .article-body-row
+      {
+        padding-bottom: 50px;
+      }
+
+      .article-body-column
+      {
+        &.left
+        {
+          padding-right: 50px;
+        }
+
+        &.right
+        {
+          padding-left: 50px;
+        }
+      }
+
+      .article-body-title
+      {
+        margin-bottom: 50px;
+      }
+
+      .article-body-sub-title
+      {
+        margin-bottom: 10px;
+      }
+
+      .article-body-description
+      {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .article-body-certificates
+      {
+        .article-body-certificates-item
+        {
+          margin-right: 50px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+        }
+      }
+
+      .article-body-quote
+      {
+        width: 80%;
+        padding-left: 30px;
+        border-left: 2px solid @black;
+
+        .article-body-quote-description
+        {
+          margin-top: 10px;
+          margin-left: 20px;
+          font-weight: 600;
+
+          &:after
+          {
+            display: block;
+            position: relative;
+            top: -12px;
+            left: -20px;
+            content: ' ';
+            height: 2px;
+            width: 10px;
+            background: @black;
+          }
+
+        }
+      }
+
+      .article-body-image
+      {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.form
+  {
+    padding: 50px 0px;
+
+    .form-head
+    {
+      padding: 50px 0px;
+
+      .form-head-column
+      {
+        &.right
+        {
+          text-align: right;
+        }
+
+        .form-head-column-title
+        {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .form-body
+    {
+      padding: 50px 0px;
+
+      .form-body-row
+      {
+        margin-bottom: 50px;
+      }
+
+      .form-body-column
+      {
+        &.left
+        {
+          padding-right: 50px;
+        }
+
+        &.center
+        {
+          padding: 0px 50px;
+        }
+
+        &.right
+        {
+          padding-left: 50px;
+        }
+      }
+
+      .form-body-input
+      {
+        width: 100%;
+      }
+
+      .form-body-checkbox
+      {
+        float: left;
+        cursor: pointer;
+      }
+
+      .form-body-label
+      {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .form-body-certificates
+      {
+        list-style: none;
+
+        .form-body-certificates-item
+        {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &.menu
+  {
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid @gray;
+
+    .menu-navigation
+    {
+      float: left;
+      list-style: none;
+
+      .menu-navigation-item
+      {
+        display: inline-block;
+        margin-right: 30px;
+        color: @black;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+    }
+
+    .menu-tools
+    {
+      float: right;
+      list-style: none;
+
+      .menu-tools-item
+      {
+        display: inline-block;
+        margin-left: 30px;
+        color: @black;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &.breadcrumb
+  {
+    padding-top: 50px;
+
+    .breadcrumb-navigation
+    {
+      list-style: none;
+
+      .breadcrumb-navigation-item
+      {
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+
+        &:after
+        {
+          padding: 5px;
+          content: ">";
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &.data
+  {
+    padding: 50px 0px;
+
+    .data-table
+    {
+      width: 100%;
+      border: 1px solid @gray;
+
+      .data-table-head
+      {
+        border: 1px solid @gray;
+        background: @white;
+
+        .data-table-head-column
+        {
+          padding: 25px;
+          border: 1px solid @gray;
+
+          .data-table-head-column-title
+          {
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .data-table-body
+      {
+        border: 1px solid @gray;
+
+        .data-table-body-row
+        {
+          cursor: pointer;
+          border: 1px solid @gray;
+        }
+
+        .data-table-body-column
+        {
+          padding: 25px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          border: 1px solid @gray;
+
+          .data-table-body-column-image
+          {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+          }
+
+          .data-table-body-column-rank, .data-table-body-column-state
+          {
+            text-align: center;
+            padding: 5px;
+            background: @black;
+            color: @white;
+            border-radius: 10px;
+
+            &.blocked, &.cancelled
+            {
+              background: @red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.parallax
+  {
+    height: 400px;
+    background: red;
+  }
+}

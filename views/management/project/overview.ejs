@@ -1,0 +1,143 @@
+<section class="view management project create">
+    <div class="block banner">
+        <video class="banner-background" loop muted autoplay>
+            <source src="/assets/video/main.mp4" type="video/mp4">
+        </video>
+
+        <div class="banner-overlay"></div>
+
+        <div class="container">
+            <div class="banner-body">
+                <h1 class="banner-body-title">
+                    Projects
+                </h1>
+
+                <p class="banner-body-description">
+                    Aenean nec lorem in porttitor donec laoreet nonummy augue.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block menu">
+        <div class="container">
+            <ul class="menu-navigation">
+                <a href="/management/overview">
+                    <li class="menu-navigation-item">
+                        Overview
+                    </li>
+                </a>
+
+                <a href="/management/user/overview">
+                    <li class="menu-navigation-item">
+                        Users
+                    </li>
+                </a>
+
+                <a href="/management/order/overview">
+                    <li class="menu-navigation-item">
+                        Orders
+                    </li>
+                </a>
+
+                <a href="/management/project/overview">
+                    <li class="menu-navigation-item">
+                        Projects
+                    </li>
+                </a>
+
+                <a href="/management/certificate/overview">
+                    <li class="menu-navigation-item">
+                        Certificates
+                    </li>
+                </a>
+            </ul>
+
+            <ul class="menu-tools">
+                <a href="/management/project/create">
+                    <li class="menu-tools-item">
+                        Create
+                    </li>
+                </a>
+
+                <a href="/user/profile">
+                    <li class="menu-tools-item">
+                        Logout
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-navigation">
+                <a href="">
+                    <li class="breadcrumb-navigation-item">
+                        Projects
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block data">
+        <div class="container">
+            <table class="data-table">
+                <thead class="data-table-head">
+                    <th class="data-table-head-column">
+                        <p class="data-table-head-column-title">
+                            #
+                        </p>
+                    </th>
+
+                    <th class="data-table-head-column">
+                        <p class="data-table-head-column-title">
+                            Name
+                        </p>
+                    </th>
+
+                    <th class="data-table-head-column">
+                        <p class="data-table-head-column-title">
+                            Last updated on
+                        </p>
+                    </th>
+
+                    <th class="data-table-head-column">
+                        <p class="data-table-head-column-title">
+                            Created on
+                        </p>
+                    </th>
+                </thead>
+
+                <tbody class="data-table-body">
+                    <%
+                        let nr = 1;
+                        projects.forEach((project) => {
+                    %>
+                        <tr class="data-table-body-row" onclick="goto('/management/category/overview/<%= project._id %>')">
+                            <td class="data-table-body-column">
+                                Nr. 0<%= nr %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= project.name %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= project.updated.toDateString() %>
+                            </td>
+
+                            <td class="data-table-body-column">
+                                <%= project.created.toDateString() %>
+                            </td>
+                        </tr>
+                    <%
+                            nr++;
+                        });
+                    %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

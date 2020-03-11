@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900&display=swap');
+
+@font: 'Source Sans Pro', sans-serif;
+
+@black: #000000;
+@white: #FFFFFF;
+@silver: #FDFDFD;
+@gray: #EEEEEE;
+@red: #C93F3F;
+
+@screen: only screen and;
+@screen-xxs-min: 437px;
+@screen-xs-min: 580px;
+@screen-sm-min: 867px;
+@screen-md-min: 1092px;
+@screen-lg-min: 1300px;
+@screen-xl-min: 1561px;
+@screen-xxl-min: 1921px;
+
+@xxs: ~'max-width: @{screen-xxs-min}';
+@xs: ~'max-width: @{screen-xs-min}';
+@sm: ~'max-width: @{screen-sm-min}';
+@md: ~'max-width: @{screen-md-min}';
+@lg: ~'max-width: @{screen-lg-min}';
+@xl: ~'max-width: @{screen-xl-min}';
+@xxl: ~'max-width: @{screen-xxl-min}';
+
+@import 'base';
+@import 'layout';
+@import 'content';
